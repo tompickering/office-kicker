@@ -11,7 +11,7 @@ var reactions = [
 
 var show_message = function(msg) {
     return function() {
-        var res = alert(msg);
+        setTimeout("alert('" + msg + "');", 100);
         document.querySelector('body').style['transform'] = 'rotate(0deg)';
     };
 };
@@ -21,7 +21,7 @@ var kick = function() {
     var deg = 20 - 45 * Math.random();
     document.getElementsByTagName('body')[0].style['transform'] = 'rotate(' + deg + 'deg)';
     var ow_msg = "Office says: \"" + reaction + "!\"";
-    setTimeout(show_message(ow_msg), 0.1);
+    setTimeout(show_message(ow_msg), 100);
 };
 
 chrome.runtime.onMessage.addListener(
